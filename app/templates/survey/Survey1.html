@@ -14,11 +14,8 @@
       <div class="col-lg-10">
         <form method="POST" action="." class="form form-horizontal">
           {{ form.csrf_token }}
-
-          {{ render_field(form.gender) }}
+          {{ render_field(form.injury)}}
           {{ render_field(form.age) }}
-          {{ render_field(form.education)}}
-          {{ render_field(form.language, class="form-control")}}
 
           <div class="control-group">
             <label class="control-label"></label>
