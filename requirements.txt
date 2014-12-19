@@ -3,7 +3,7 @@ Flask-Login==0.2.9
 Flask-Openid
 Flask-mail
 Flask-SQLAlchemy==1.0
-Flask-squalchemy-migrate
+Flask-sqlalchemy-migrate
 Flask-WhooshAlchemy==0.55
 Flask-Script==2.0.5
 Flask-User==0.4.9
@@ -12,3 +12,5 @@ guess-language
 flipflop
 coverage
 Jinja2==2.7.2
+Flask-Migrate
+Flask-login
