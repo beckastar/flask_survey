@@ -1,6 +1,6 @@
 from wtforms import Form, fields,  validators, ValidationError
 from wtforms import widgets, StringField, BooleanField, RadioField
-from wtforms.validators import DataRequired, Length
+from wtforms.validators import DataRequired, Email, Length, Regexp
 from models import User
 
 
