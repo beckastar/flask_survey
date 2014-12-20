@@ -13,7 +13,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nickname = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
-    posts = db.relationship('Post', backref='author', lazy='dynamic')
+
 
     def is_authenticated(self):
         return True
@@ -34,21 +34,49 @@ class User(db.Model):
         return '<User %r>' % (self.nickname)
 
 
-class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String(140))
-    timestamp = db.Column(db.DateTime)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-    def __repr__(self):
-        return '<Post %r>' % (self.body)
-
-class Survey1(db.Model):
+class DateQuestions(db.Model):
     # __tablename__='survey1'
     id = db.Column(db.Integer, primary_key = True)
-    incident = db.Column(db.String(50))
-    address = db.Column(db.String(50))
+    injury_severity = db.Column(db.String(50))
+    type_of_bike = db.Column(db.String(50))
+    name_of_street = db.Column(db.String(50))
+    building_address = db.Column(db.Integer)
+    cross_street =db.Column(db.String(50))
+    year_of_crash = db.Column(db.Integer)
+    month_of_crash =db.Column(db.Integer)
+    day_of_week = db.Column(db.String(10))
+    approx_time = db.Column(db.Integer)
+    address = db.Column(db.String(20))
     rider = db.Column(db.Boolean)
+    holiday = db.Column(db.Boolean)
+    road_conditions = db.Column(db.Boolean)
+    vehicle_violations = db.Column(db.Boolean)
+    lighting_conditions = db.Column(db.Boolean)
+    road_surface = db.Column(db.Boolean)
+    another_vehicle = db.Column(db.Boolean)
+    other = db.Column(db.String(50))
+
+
+
+   def __init__(self, arg):
+        super(ClassName, self).__init__()
+        self.arg = arg
+
+
+class RoadQuality(db.Model):
+    muni_tracks = db.Column(db.Boolean)
+    potholes = db.Column(db.Boolean)
+    loose_materials_on_roadway = db.Column(db.Boolean)
+    obstruction_on_roadway = db.Column(db.Boolean)
+    construction = db.Column(db.Boolean)
+    reduced_roadway_width = db.Column(db.Boolean)
+    flooded = db.Column(db.Boolean)
+    other_roadway_issue  = db.Column(db.String(50))
+
+class ClassName(object):
+    """docstring for ClassName"""
+
 
 
 

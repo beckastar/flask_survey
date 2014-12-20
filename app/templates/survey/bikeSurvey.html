@@ -1,0 +1,988 @@
+{% extends 'layouts/base.html' %}
+
+{% set page_title = 'Home' %}
+
+{% block container %}
+   <body id="public" onorientationchange="window.scrollTo(0, 1)">
+      <div id="container" class="ltr">
+         <h1 id="logo">
+            <a href="http://www.wufoo.com/?t=o2j5o6" title="Powered by Wufoo">Wufoo</a>
+         </h1>
+         <form id="form1" name="form1" class="wufoo topLabel page1" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate
+            action="https://bikecrashes.wufoo.com/forms/bicycle-crash-survey/">
+            <header id="header" class="info">
+               <h2>Bicycle Crash Survey</h2>
+               <div>We want to know </div>
+            </header>
+            <ul>
+               <li id="fo1li1"         class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title1" class="desc">
+                        What is the collision severity of the bike accident in question?
+                        <span id="req_1" class="req">*</span>
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title1" class="desc">
+                     What is the collision severity of the bike accident in question?
+                     <span id="req_1" class="req">*</span>
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <span>
+                        <input id="Field1"      name="Field1"       type="checkbox"         class="field checkbox"      value="Fatal"       tabindex="1"                onchange="handleInput(this);"                           />
+                        <label class="choice" for="Field1">Fatal</label>
+                        </span>
+                        <span>
+                        <input id="Field2"      name="Field2"       type="checkbox"         class="field checkbox"      value="Severe injury (broken bones, concussion perm damage)"        tabindex="2"                onchange="handleInput(this);"                           />
+                        <label class="choice" for="Field2">Severe injury (broken bones, concussion perm damage)</label>
+                        </span>
+                        <span>
+                        <input id="Field3"      name="Field3"       type="checkbox"         class="field checkbox"      value="Surface wounds (sprains, scrapes, bruises)"      tabindex="3"                onchange="handleInput(this);"                           />
+                        <label class="choice" for="Field3">Surface wounds (sprains, scrapes, bruises)</label>
+                        </span>
+                        <span>
+                        <input id="Field4"      name="Field4"       type="checkbox"         class="field checkbox"      value="Minor discomfort"        tabindex="4"                onchange="handleInput(this);"                           />
+                        <label class="choice" for="Field4">Minor discomfort</label>
+                        </span>
+                        <span>
+                        <input id="Field5"      name="Field5"       type="checkbox"         class="field checkbox"      value="None"        tabindex="5"                onchange="handleInput(this);"                           />
+                        <label class="choice" for="Field5">None</label>
+                        </span>
+                     </div>
+                  </fieldset>
+                  <p class="instruct" id="instruct1"><small>Select one only</small></p>
+               </li>
+               <li id="fo1li102"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title102" class="desc">
+                        What kind of bike was the rider in question on?
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title102" class="desc">
+                     What kind of bike was the rider in question on?
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_102" name="Field102" type="hidden" value="" />
+                        <span>
+                        <input id="Field102_0"      name="Field102"         type="radio"        class="field radio"         value="BMX"         tabindex="6"                onchange="handleInput(this);"       onmouseup="handleInput(this);"                      checked="checked"                                   />
+                        <label class="choice" for="Field102_0" >
+                        BMX</label>
+                        </span>
+                        <span>
+                        <input id="Field102_1"      name="Field102"         type="radio"        class="field radio"         value="Fixie"       tabindex="7"                onchange="handleInput(this);"       onmouseup="handleInput(this);"/>
+                        <label class="choice" for="Field102_1">
+                        Fixie</label>
+                        </span>
+                        <span>
+                        <input id="Field102_2"      name="Field102"         type="radio"        class="field radio"         value="Carbon Fiber"        tabindex="8"                onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field102_2"      >
+                        Carbon Fiber</label>
+                        </span>
+                        <span>
+                        <input id="Field102_3"      name="Field102"         type="radio"        class="field radio"         value="Tourist rental"      tabindex="9"                onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field102_3"      >
+                        Tourist rental</label>
+                        </span>
+                        <span>
+                        <input id="Field102_4"      name="Field102"         type="radio"        class="field radio"         value="Road bike"       tabindex="10"               onchange="handleInput(this);"       onmouseup="handleInput(this);"/>
+                        <label class="choice" for="Field102_4" >
+                        Road bike</label>
+                        </span>
+                        <span>
+                        <input id="Field102_5"      name="Field102"         type="radio"        class="field radio"         value="Hybrid"      tabindex="11"               onchange="handleInput(this);"       onmouseup="handleInput(this);"/>
+                        <label class="choice" for="Field102_5"      >
+                        Hybrid</label>
+                        </span>
+                        <span>
+                        <input id="Field102_6"      name="Field102"         type="radio"        class="field radio"         value="Mountain"        tabindex="12"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field102_6"      >
+                        Mountain</label>
+                        </span>
+                        <span>
+                        <input id="Field102_7"      name="Field102"         type="radio"        class="field radio"         value="Tandem"      tabindex="13"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field102_7"      >
+                        Tandem</label>
+                        </span>
+                        <span>
+                        <input id="Field102_8"      name="Field102"         type="radio"        class="field radio"         value="Bikeshare"       tabindex="14"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field102_8"      >
+                        Bikeshare</label>
+                        </span>
+                        <span>
+                        <input id="Field102_9"      name="Field102"         type="radio"        class="field radio"         value="Other"       tabindex="15"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field102_other').focus();"                                  />
+                        <label class="choice" for="Field102_9"               onmouseup="document.getElementById('Field102_other').focus();">
+                        Other</label>
+                        <input id="Field102_other"      name="Field102_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field102_9').checked = 'checked';"                onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="16" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li id="fo1li117"       class="notranslate       ">
+                  <label class="desc" id="title117" for="Field117">
+                  What was the name of the street you were on?
+                  </label>
+                  <div>
+                     <select id="Field117"           name="Field117"             class="field select large"                      onclick="handleInput(this);"            onkeyup="handleInput(this);"                            tabindex="17" >
+                        <option value="Anza" selected="selected">
+                     </select>
+                  </div>
+               </li>
+               <li id="fo1li433"       class="notranslate       ">
+                  <label class="desc" id="title433" for="Field433">
+                  What was the name of the cross street you were at?
+                  </label>
+                  <div>
+                     <select id="Field433"           name="Field433"             class="field select medium"                         onclick="handleInput(this);"            onkeyup="handleInput(this);"                            tabindex="18" >
+                        <option value="Anza"                                selected="selected">
+
+                     </select>
+                  </div>
+               </li>
+               <li id="fo1li110"       class="notranslate       ">
+                  <label class="desc" id="title110" for="Field110">
+                  Month crash occurred
+                  </label>
+                  <div>
+                     <select id="Field110"           name="Field110"             class="field select medium"                         onclick="handleInput(this);"            onkeyup="handleInput(this);"                            tabindex="19" >
+                        <option value="January"                                 selected="selected">
+                           January
+                        </option>
+                        <option value="February"                >
+                           February
+                        </option>
+                        <option value="March"               >
+                           March
+                        </option>
+                        <option value="April"               >
+                           April
+                        </option>
+                        <option value="May"                 >
+                           May
+                        </option>
+                        <option value="June"                >
+                           June
+                        </option>
+                        <option value="July"                >
+                           July
+                        </option>
+                        <option value="August"              >
+                           August
+                        </option>
+                        <option value="September"               >
+                           September
+                        </option>
+                        <option value="October"                 >
+                           October
+                        </option>
+                        <option value="November"                >
+                           November
+                        </option>
+                        <option value="December"                >
+                           December
+                        </option>
+                     </select>
+                  </div>
+               </li>
+               <li id="fo1li109"       class="notranslate       ">
+                  <label class="desc" id="title109" for="Field109">
+                  Day of week crash occurred (best guess)
+                  </label>
+                  <div>
+                     <select id="Field109"           name="Field109"             class="field select medium"                         onclick="handleInput(this);"            onkeyup="handleInput(this);"                            tabindex="20" >
+                        <option value="Monday"                              selected="selected">
+                           Monday
+                        </option>
+                        <option value="Tuesday"                 >
+                           Tuesday
+                        </option>
+                        <option value="Wednesday"               >
+                           Wednesday
+                        </option>
+                        <option value="Thursday"                >
+                           Thursday
+                        </option>
+                        <option value="Friday"              >
+                           Friday
+                        </option>
+                        <option value="Saturday"                >
+                           Saturday
+                        </option>
+                        <option value="Sunday"              >
+                           Sunday
+                        </option>
+                        <option value="Don&#039;t know"                 >
+                           Don't know
+                        </option>
+                     </select>
+                  </div>
+               </li>
+               <li id="fo1li113"       class="notranslate       ">
+                  <label class="desc" id="title113" for="Field113">
+                  Year of crash
+                  </label>
+                  <div>
+                     <select id="Field113"           name="Field113"             class="field select medium"                         onclick="handleInput(this);"            onkeyup="handleInput(this);"                            tabindex="21" >
+                        <option value="2010"                                selected="selected">
+                           2010
+                        </option>
+                        <option value="2011"                >
+                           2011
+                        </option>
+                        <option value="2012"                >
+                           2012
+                        </option>
+                        <option value="2013"                >
+                           2013
+                        </option>
+                        <option value="2014"                >
+                           2014
+                        </option>
+                        <option value="Don&#039;t remember/ not listed"                 >
+                           Don't remember/ not listed
+                        </option>
+                     </select>
+                  </div>
+               </li>
+               <li id="fo1li114"       class="notranslate       ">
+                  <label class="desc" id="title114" for="Field114">
+                  Time of crash
+                  </label>
+                  <div>
+                     <select id="Field114"           name="Field114"             class="field select medium"                         onclick="handleInput(this);"            onkeyup="handleInput(this);"                            tabindex="22" >
+                        <option value="Before 7am"                              selected="selected">
+                           Before 7am
+                        </option>
+                        <option value="7-10">
+                           7-10
+                        </option>
+                        <option value="10-2">
+                           10-2
+                        </option>
+                        <option value="2-4">
+                           2-4
+                        </option>
+                        <option value="4-6">
+                           4-6
+                        </option>
+                        <option value="6-10">
+                           6-10
+                        </option>
+                        <option value="After 10">
+                           After 10
+                        </option>
+                     </select>
+                  </div>
+                  <p class="instruct" id="instruct114"><small>What was the approximate time of your crash?</small></p>
+               </li>
+               <li id="fo1li426"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title426" class="desc">
+                        Was this a legal or commonly celebrated holiday?
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title426" class="desc">
+                     Was this a legal or commonly celebrated holiday?
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_426" name="Field426" type="hidden" value="" />
+                        <span>
+                        <input id="Field426_0"      name="Field426"         type="radio"        class="field radio"         value="Yes"         tabindex="23"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field426_0"      >
+                        Yes</label>
+                        </span>
+                        <span>
+                        <input id="Field426_1"      name="Field426"         type="radio"        class="field radio"         value="No"      tabindex="24"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field426_1"      >
+                        No</label>
+                        </span>
+                     </div>
+                  </fieldset>
+                  <p class="instruct" id="instruct426"><small>What was the approximate time of your crash?</small></p>
+               </li>
+               <li id="fo1li320"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title320" class="desc">
+                        What were the conditions which caused the crash? Check all that apply.
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title320" class="desc">
+                     What were the conditions which caused the crash? Check all that apply.
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_320" name="Field320" type="hidden" value="" />
+                        <span>
+                        <input id="Field320_0"      name="Field320"         type="radio"        class="field radio"         value="Road conditions"         tabindex="25"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field320_0"      >
+                        Road conditions</label>
+                        </span>
+                        <span>
+                        <input id="Field320_1"      name="Field320"         type="radio"        class="field radio"         value="Vehicle code violations"         tabindex="26"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field320_1"      >
+                        Vehicle code violations</label>
+                        </span>
+                        <span>
+                        <input id="Field320_2"      name="Field320"         type="radio"        class="field radio"         value="Lighting conditions"         tabindex="27"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field320_2"      >
+                        Lighting conditions</label>
+                        </span>
+                        <span>
+                        <input id="Field320_3"      name="Field320"         type="radio"        class="field radio"         value="Road surface"        tabindex="28"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field320_3"      >
+                        Road surface</label>
+                        </span>
+                        <span>
+                        <input id="Field320_4"      name="Field320"         type="radio"        class="field radio"         value="Another vehicle"         tabindex="29"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field320_4"      >
+                        Another vehicle</label>
+                        </span>
+                        <span>
+                        <input id="Field320_5"      name="Field320"         type="radio"        class="field radio"         value="Other"       tabindex="30"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field320_other').focus();"                                  />
+                        <label class="choice" for="Field320_5"               onmouseup="document.getElementById('Field320_other').focus();">
+                        Other</label>
+                        <input id="Field320_other"      name="Field320_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field320_5').checked = 'checked';"                onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="31" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li id="fo1li319"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title319" class="desc">
+                        If accident was due to road conditions, then what were the problems?
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title319" class="desc">
+                     If accident was due to road conditions, then what were the problems?
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_319" name="Field319" type="hidden" value="" />
+                        <span>
+                        <input id="Field319_0"      name="Field319"         type="radio"        class="field radio"         value="Muni tracks"         tabindex="32"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field319_0"      >
+                        Muni tracks</label>
+                        </span>
+                        <span>
+                        <input id="Field319_1"      name="Field319"         type="radio"        class="field radio"         value="Potholes or uneven pavement"         tabindex="33"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field319_1"      >
+                        Potholes or uneven pavement</label>
+                        </span>
+                        <span>
+                        <input id="Field319_2"      name="Field319"         type="radio"        class="field radio"         value="Loose material on roadway"       tabindex="34"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field319_2"      >
+                        Loose material on roadway</label>
+                        </span>
+                        <span>
+                        <input id="Field319_3"      name="Field319"         type="radio"        class="field radio"         value="Obstruction on roadway (manhole covers, grills)"         tabindex="35"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field319_3"      >
+                        Obstruction on roadway (manhole covers, grills)</label>
+                        </span>
+                        <span>
+                        <input id="Field319_4"      name="Field319"         type="radio"        class="field radio"         value="Construction or repair zone"         tabindex="36"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field319_4"      >
+                        Construction or repair zone</label>
+                        </span>
+                        <span>
+                        <input id="Field319_5"      name="Field319"         type="radio"        class="field radio"         value="Reduced roadway width"       tabindex="37"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field319_5"      >
+                        Reduced roadway width</label>
+                        </span>
+                        <span>
+                        <input id="Field319_6"      name="Field319"         type="radio"        class="field radio"         value="Flooded"         tabindex="38"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field319_6"      >
+                        Flooded</label>
+                        </span>
+                        <span>
+                        <input id="Field319_7"      name="Field319"         type="radio"        class="field radio"         value="Other"       tabindex="39"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field319_other').focus();"                                  />
+                        <label class="choice" for="Field319_7"               onmouseup="document.getElementById('Field319_other').focus();">
+                        Other</label>
+                        <input id="Field319_other"      name="Field319_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field319_7').checked = 'checked';"                onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="40" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li id="fo1li321"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title321" class="desc">
+                        If accident was based on a vehicle code violation on part of cyclist, what were the factors?
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title321" class="desc">
+                     If accident was based on a vehicle code violation on part of cyclist, what were the factors?
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_321" name="Field321" type="hidden" value="" />
+                        <span>
+                        <input id="Field321_0"      name="Field321"         type="radio"        class="field radio"         value="Biking under influence of alcohol or drugs"      tabindex="41"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                      checked="checked"                                   />
+                        <label class="choice" for="Field321_0"      >
+                        Biking under influence of alcohol or drugs</label>
+                        </span>
+                        <span>
+                        <input id="Field321_1"      name="Field321"         type="radio"        class="field radio"         value="Impeding traffic"        tabindex="42"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_1"      >
+                        Impeding traffic</label>
+                        </span>
+                        <span>
+                        <input id="Field321_2"      name="Field321"         type="radio"        class="field radio"         value="Unsafe speed"        tabindex="43"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_2"      >
+                        Unsafe speed</label>
+                        </span>
+                        <span>
+                        <input id="Field321_3"      name="Field321"         type="radio"        class="field radio"         value="Following too closely"       tabindex="44"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_3"      >
+                        Following too closely</label>
+                        </span>
+                        <span>
+                        <input id="Field321_4"      name="Field321"         type="radio"        class="field radio"         value="Wrong side of road"      tabindex="45"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_4"      >
+                        Wrong side of road</label>
+                        </span>
+                        <span>
+                        <input id="Field321_5"      name="Field321"         type="radio"        class="field radio"         value="Improper passing"        tabindex="46"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_5"      >
+                        Improper passing</label>
+                        </span>
+                        <span>
+                        <input id="Field321_6"      name="Field321"         type="radio"        class="field radio"         value="Unsafe lane change"      tabindex="47"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_6"      >
+                        Unsafe lane change</label>
+                        </span>
+                        <span>
+                        <input id="Field321_7"      name="Field321"         type="radio"        class="field radio"         value="Improper turning"        tabindex="48"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_7"      >
+                        Improper turning</label>
+                        </span>
+                        <span>
+                        <input id="Field321_8"      name="Field321"         type="radio"        class="field radio"         value="Automobile Right of Way"         tabindex="49"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_8"      >
+                        Automobile Right of Way</label>
+                        </span>
+                        <span>
+                        <input id="Field321_9"      name="Field321"         type="radio"        class="field radio"         value="Pedestrian Right of Way"         tabindex="50"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_9"      >
+                        Pedestrian Right of Way</label>
+                        </span>
+                        <span>
+                        <input id="Field321_10"         name="Field321"         type="radio"        class="field radio"         value="Pedestrian violation"        tabindex="51"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_10"         >
+                        Pedestrian violation</label>
+                        </span>
+                        <span>
+                        <input id="Field321_11"         name="Field321"         type="radio"        class="field radio"         value="Ignoring traffic signals"        tabindex="52"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_11"         >
+                        Ignoring traffic signals</label>
+                        </span>
+                        <span>
+                        <input id="Field321_12"         name="Field321"         type="radio"        class="field radio"         value="Ignoring stop signs"         tabindex="53"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_12"         >
+                        Ignoring stop signs</label>
+                        </span>
+                        <span>
+                        <input id="Field321_13"         name="Field321"         type="radio"        class="field radio"         value="Hazardous parking"       tabindex="54"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_13"         >
+                        Hazardous parking</label>
+                        </span>
+                        <span>
+                        <input id="Field321_14"         name="Field321"         type="radio"        class="field radio"         value="Bike not lit properly"       tabindex="55"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_14"         >
+                        Bike not lit properly</label>
+                        </span>
+                        <span>
+                        <input id="Field321_15"         name="Field321"         type="radio"        class="field radio"         value="Brakes not working"      tabindex="56"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_15"         >
+                        Brakes not working</label>
+                        </span>
+                        <span>
+                        <input id="Field321_16"         name="Field321"         type="radio"        class="field radio"         value="Bike malfunction"        tabindex="57"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field321_16"         >
+                        Bike malfunction</label>
+                        </span>
+                        <span>
+                        <input id="Field321_17"         name="Field321"         type="radio"        class="field radio"         value="Other"       tabindex="58"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field321_other').focus();"                                  />
+                        <label class="choice" for="Field321_17"                  onmouseup="document.getElementById('Field321_other').focus();">
+                        Other</label>
+                        <input id="Field321_other"      name="Field321_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field321_17').checked = 'checked';"               onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="59" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li id="fo1li322"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title322" class="desc">
+                        Road surface
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title322" class="desc">
+                     Road surface
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_322" name="Field322" type="hidden" value="" />
+                        <span>
+                        <input id="Field322_0"      name="Field322"         type="radio"        class="field radio"         value="Dry"         tabindex="60"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                      checked="checked"                                   />
+                        <label class="choice" for="Field322_0"      >
+                        Dry</label>
+                        </span>
+                        <span>
+                        <input id="Field322_1"      name="Field322"         type="radio"        class="field radio"         value="Wet"         tabindex="61"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field322_1"      >
+                        Wet</label>
+                        </span>
+                        <span>
+                        <input id="Field322_2"      name="Field322"         type="radio"        class="field radio"         value="Slippery(muddy, oily, etc)"      tabindex="62"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field322_2"      >
+                        Slippery(muddy, oily, etc)</label>
+                        </span>
+                        <span>
+                        <input id="Field322_3"      name="Field322"         type="radio"        class="field radio"         value="Other"       tabindex="63"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field322_other').focus();"                                  />
+                        <label class="choice" for="Field322_3"               onmouseup="document.getElementById('Field322_other').focus();">
+                        Other</label>
+                        <input id="Field322_other"      name="Field322_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field322_3').checked = 'checked';"                onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="64" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li id="fo1li323"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title323" class="desc">
+                        Lighting
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title323" class="desc">
+                     Lighting
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_323" name="Field323" type="hidden" value="" />
+                        <span>
+                        <input id="Field323_0"      name="Field323"         type="radio"        class="field radio"         value="Daylight"        tabindex="65"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                      checked="checked"                                   />
+                        <label class="choice" for="Field323_0"      >
+                        Daylight</label>
+                        </span>
+                        <span>
+                        <input id="Field323_1"      name="Field323"         type="radio"        class="field radio"         value="Dusk"        tabindex="66"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field323_1"      >
+                        Dusk</label>
+                        </span>
+                        <span>
+                        <input id="Field323_2"      name="Field323"         type="radio"        class="field radio"         value="Dark"        tabindex="67"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field323_2"      >
+                        Dark</label>
+                        </span>
+                        <span>
+                        <input id="Field323_3"      name="Field323"         type="radio"        class="field radio"         value="No street lights"        tabindex="68"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field323_3"      >
+                        No street lights</label>
+                        </span>
+                        <span>
+                        <input id="Field323_4"      name="Field323"         type="radio"        class="field radio"         value="Street lights not functioning"       tabindex="69"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field323_4"      >
+                        Street lights not functioning</label>
+                        </span>
+                        <span>
+                        <input id="Field323_5"      name="Field323"         type="radio"        class="field radio"         value="Other"       tabindex="70"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field323_other').focus();"                                  />
+                        <label class="choice" for="Field323_5"               onmouseup="document.getElementById('Field323_other').focus();">
+                        Other</label>
+                        <input id="Field323_other"      name="Field323_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field323_5').checked = 'checked';"                onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="71" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li id="fo1li324"       class="notranslate      hide">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title324" class="desc">
+                        If accident was the result of other vehicle, what were they doing?
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title324" class="desc">
+                     If accident was the result of other vehicle, what were they doing?
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_324" name="Field324" type="hidden" value="" />
+                        <span>
+                        <input id="Field324_0"      name="Field324"         type="radio"        class="field radio"         value="Stopped"         tabindex="72"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                      checked="checked"                                   />
+                        <label class="choice" for="Field324_0"      >
+                        Stopped</label>
+                        </span>
+                        <span>
+                        <input id="Field324_1"      name="Field324"         type="radio"        class="field radio"         value="Proceeding straight"         tabindex="73"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_1"      >
+                        Proceeding straight</label>
+                        </span>
+                        <span>
+                        <input id="Field324_2"      name="Field324"         type="radio"        class="field radio"         value="Ran off road"        tabindex="74"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_2"      >
+                        Ran off road</label>
+                        </span>
+                        <span>
+                        <input id="Field324_3"      name="Field324"         type="radio"        class="field radio"         value="Making right turn"       tabindex="75"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_3"      >
+                        Making right turn</label>
+                        </span>
+                        <span>
+                        <input id="Field324_4"      name="Field324"         type="radio"        class="field radio"         value="Making left turn"        tabindex="76"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_4"      >
+                        Making left turn</label>
+                        </span>
+                        <span>
+                        <input id="Field324_5"      name="Field324"         type="radio"        class="field radio"         value="Making u-turn"       tabindex="77"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_5"      >
+                        Making u-turn</label>
+                        </span>
+                        <span>
+                        <input id="Field324_6"      name="Field324"         type="radio"        class="field radio"         value="Backing up"      tabindex="78"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_6"      >
+                        Backing up</label>
+                        </span>
+                        <span>
+                        <input id="Field324_7"      name="Field324"         type="radio"        class="field radio"         value="Changing lanes"      tabindex="79"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_7"      >
+                        Changing lanes</label>
+                        </span>
+                        <span>
+                        <input id="Field324_8"      name="Field324"         type="radio"        class="field radio"         value="Slowing / stopping"      tabindex="80"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_8"      >
+                        Slowing / stopping</label>
+                        </span>
+                        <span>
+                        <input id="Field324_9"      name="Field324"         type="radio"        class="field radio"         value="Parking maneuver"        tabindex="81"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_9"      >
+                        Parking maneuver</label>
+                        </span>
+                        <span>
+                        <input id="Field324_10"         name="Field324"         type="radio"        class="field radio"         value="Entering traffic"        tabindex="82"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_10"         >
+                        Entering traffic</label>
+                        </span>
+                        <span>
+                        <input id="Field324_11"         name="Field324"         type="radio"        class="field radio"         value="Other unsafe turn"       tabindex="83"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_11"         >
+                        Other unsafe turn</label>
+                        </span>
+                        <span>
+                        <input id="Field324_12"         name="Field324"         type="radio"        class="field radio"         value="Crossed into opposing lane"      tabindex="84"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_12"         >
+                        Crossed into opposing lane</label>
+                        </span>
+                        <span>
+                        <input id="Field324_13"         name="Field324"         type="radio"        class="field radio"         value="Parked"      tabindex="85"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_13"         >
+                        Parked</label>
+                        </span>
+                        <span>
+                        <input id="Field324_14"         name="Field324"         type="radio"        class="field radio"         value="Opening door"        tabindex="86"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_14"         >
+                        Opening door</label>
+                        </span>
+                        <span>
+                        <input id="Field324_15"         name="Field324"         type="radio"        class="field radio"         value="Traveling wrong way"         tabindex="87"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_15"         >
+                        Traveling wrong way</label>
+                        </span>
+                        <span>
+                        <input id="Field324_16"         name="Field324"         type="radio"        class="field radio"         value="DUI"         tabindex="88"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field324_16"         >
+                        DUI</label>
+                        </span>
+                        <span>
+                        <input id="Field324_17"         name="Field324"         type="radio"        class="field radio"         value="Other"       tabindex="89"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field324_other').focus();"                                  />
+                        <label class="choice" for="Field324_17"                  onmouseup="document.getElementById('Field324_other').focus();">
+                        Other</label>
+                        <input id="Field324_other"      name="Field324_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field324_17').checked = 'checked';"               onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="90" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li id="fo1li428"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title428" class="desc">
+                        What kind of vehicle was it?
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title428" class="desc">
+                     What kind of vehicle was it?
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_428" name="Field428" type="hidden" value="" />
+                        <span>
+                        <input id="Field428_0"      name="Field428"         type="radio"        class="field radio"         value="Cab"         tabindex="91"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                      checked="checked"                                   />
+                        <label class="choice" for="Field428_0"      >
+                        Cab</label>
+                        </span>
+                        <span>
+                        <input id="Field428_1"      name="Field428"         type="radio"        class="field radio"         value="Lyft/ Uber"      tabindex="92"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field428_1"      >
+                        Lyft/ Uber</label>
+                        </span>
+                        <span>
+                        <input id="Field428_2"      name="Field428"         type="radio"        class="field radio"         value="Private vehicle"         tabindex="93"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field428_2"      >
+                        Private vehicle</label>
+                        </span>
+                        <span>
+                        <input id="Field428_3"      name="Field428"         type="radio"        class="field radio"         value="Muni"        tabindex="94"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field428_3"      >
+                        Muni</label>
+                        </span>
+                        <span>
+                        <input id="Field428_4"      name="Field428"         type="radio"        class="field radio"         value="Commercial vehicle"      tabindex="95"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field428_4"      >
+                        Commercial vehicle</label>
+                        </span>
+                        <span>
+                        <input id="Field428_5"      name="Field428"         type="radio"        class="field radio"         value="Zipcar, City Carshare or other rental"       tabindex="96"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field428_5"      >
+                        Zipcar, City Carshare or other rental</label>
+                        </span>
+                        <span>
+                        <input id="Field428_6"      name="Field428"         type="radio"        class="field radio"         value="Motorcycle / scooter"        tabindex="97"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field428_6"      >
+                        Motorcycle / scooter</label>
+                        </span>
+                        <span>
+                        <input id="Field428_7"      name="Field428"         type="radio"        class="field radio"         value="Other"       tabindex="98"               onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field428_other').focus();"                                  />
+                        <label class="choice" for="Field428_7"               onmouseup="document.getElementById('Field428_other').focus();">
+                        Other</label>
+                        <input id="Field428_other"      name="Field428_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field428_7').checked = 'checked';"                onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="99" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li id="fo1li431"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title431" class="desc">
+                        What kind of vehicle was it?
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title431" class="desc">
+                     What kind of vehicle was it?
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_431" name="Field431" type="hidden" value="" />
+                        <span>
+                        <input id="Field431_0"      name="Field431"         type="radio"        class="field radio"         value="Cab"         tabindex="100"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                      checked="checked"                                   />
+                        <label class="choice" for="Field431_0"      >
+                        Cab</label>
+                        </span>
+                        <span>
+                        <input id="Field431_1"      name="Field431"         type="radio"        class="field radio"         value="Lyft/ Uber"      tabindex="101"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field431_1"      >
+                        Lyft/ Uber</label>
+                        </span>
+                        <span>
+                        <input id="Field431_2"      name="Field431"         type="radio"        class="field radio"         value="Private vehicle"         tabindex="102"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field431_2"      >
+                        Private vehicle</label>
+                        </span>
+                        <span>
+                        <input id="Field431_3"      name="Field431"         type="radio"        class="field radio"         value="Muni"        tabindex="103"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field431_3"      >
+                        Muni</label>
+                        </span>
+                        <span>
+                        <input id="Field431_4"      name="Field431"         type="radio"        class="field radio"         value="Commercial vehicle"      tabindex="104"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field431_4"      >
+                        Commercial vehicle</label>
+                        </span>
+                        <span>
+                        <input id="Field431_5"      name="Field431"         type="radio"        class="field radio"         value="Zipcar, City Carshare or other rental"       tabindex="105"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field431_5"      >
+                        Zipcar, City Carshare or other rental</label>
+                        </span>
+                        <span>
+                        <input id="Field431_6"      name="Field431"         type="radio"        class="field radio"         value="Motorcycle / scooter"        tabindex="106"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field431_6"      >
+                        Motorcycle / scooter</label>
+                        </span>
+                        <span>
+                        <input id="Field431_7"      name="Field431"         type="radio"        class="field radio"         value="Other"       tabindex="107"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field431_other').focus();"                                  />
+                        <label class="choice" for="Field431_7"               onmouseup="document.getElementById('Field431_other').focus();">
+                        Other</label>
+                        <input id="Field431_other"      name="Field431_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field431_7').checked = 'checked';"                onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="108" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li id="fo1li430"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title430" class="desc">
+                        What kind of vehicle was it?
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title430" class="desc">
+                     What kind of vehicle was it?
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_430" name="Field430" type="hidden" value="" />
+                        <span>
+                        <input id="Field430_0"      name="Field430"         type="radio"        class="field radio"         value="Cab"         tabindex="109"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                      checked="checked"                                   />
+                        <label class="choice" for="Field430_0"      >
+                        Cab</label>
+                        </span>
+                        <span>
+                        <input id="Field430_1"      name="Field430"         type="radio"        class="field radio"         value="Lyft/ Uber"      tabindex="110"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field430_1"      >
+                        Lyft/ Uber</label>
+                        </span>
+                        <span>
+                        <input id="Field430_2"      name="Field430"         type="radio"        class="field radio"         value="Private vehicle"         tabindex="111"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field430_2"      >
+                        Private vehicle</label>
+                        </span>
+                        <span>
+                        <input id="Field430_3"      name="Field430"         type="radio"        class="field radio"         value="Muni"        tabindex="112"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field430_3"      >
+                        Muni</label>
+                        </span>
+                        <span>
+                        <input id="Field430_4"      name="Field430"         type="radio"        class="field radio"         value="Commercial vehicle"      tabindex="113"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field430_4"      >
+                        Commercial vehicle</label>
+                        </span>
+                        <span>
+                        <input id="Field430_5"      name="Field430"         type="radio"        class="field radio"         value="Zipcar, City Carshare or other rental"       tabindex="114"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field430_5"      >
+                        Zipcar, City Carshare or other rental</label>
+                        </span>
+                        <span>
+                        <input id="Field430_6"      name="Field430"         type="radio"        class="field radio"         value="Motorcycle / scooter"        tabindex="115"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field430_6"      >
+                        Motorcycle / scooter</label>
+                        </span>
+                        <span>
+                        <input id="Field430_7"      name="Field430"         type="radio"        class="field radio"         value="Other"       tabindex="116"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field430_other').focus();"                                  />
+                        <label class="choice" for="Field430_7"               onmouseup="document.getElementById('Field430_other').focus();">
+                        Other</label>
+                        <input id="Field430_other"      name="Field430_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field430_7').checked = 'checked';"                onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="117" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li id="fo1li432"       class="notranslate      ">
+                  <fieldset>
+                     <![if !IE | (gte IE 8)]>
+                     <legend id="title432" class="desc">
+                        Did you do anything to cause the accident?
+                     </legend>
+                     <![endif]>
+                     <!--[if lt IE 8]>
+                     <label id="title432" class="desc">
+                     Did you do anything to cause the accident?
+                     </label>
+                     <![endif]-->
+                     <div>
+                        <input id="radioDefault_432" name="Field432" type="hidden" value="" />
+                        <span>
+                        <input id="Field432_0"      name="Field432"         type="radio"        class="field radio"         value="No - I obeyed all traffic laws"      tabindex="118"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                      checked="checked"                                   />
+                        <label class="choice" for="Field432_0"      >
+                        No - I obeyed all traffic laws</label>
+                        </span>
+                        <span>
+                        <input id="Field432_1"      name="Field432"         type="radio"        class="field radio"         value="I ran a stop sign"       tabindex="119"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field432_1"      >
+                        I ran a stop sign</label>
+                        </span>
+                        <span>
+                        <input id="Field432_2"      name="Field432"         type="radio"        class="field radio"         value="I cut off a vehicle"         tabindex="120"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field432_2"      >
+                        I cut off a vehicle</label>
+                        </span>
+                        <span>
+                        <input id="Field432_3"      name="Field432"         type="radio"        class="field radio"         value="I did not yield for a pedestrian"        tabindex="121"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field432_3"      >
+                        I did not yield for a pedestrian</label>
+                        </span>
+                        <span>
+                        <input id="Field432_4"      name="Field432"         type="radio"        class="field radio"         value="Traveling against flow of traffic"       tabindex="122"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field432_4"      >
+                        Traveling against flow of traffic</label>
+                        </span>
+                        <span>
+                        <input id="Field432_5"      name="Field432"         type="radio"        class="field radio"         value="I was not sober"         tabindex="123"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field432_5"      >
+                        I was not sober</label>
+                        </span>
+                        <span>
+                        <input id="Field432_6"      name="Field432"         type="radio"        class="field radio"         value="I ran a stoplight"       tabindex="124"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field432_6"      >
+                        I ran a stoplight</label>
+                        </span>
+                        <span>
+                        <input id="Field432_7"      name="Field432"         type="radio"        class="field radio"         value="I was doing a speed trial"       tabindex="125"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                                          />
+                        <label class="choice" for="Field432_7"      >
+                        I was doing a speed trial</label>
+                        </span>
+                        <span>
+                        <input id="Field432_8"      name="Field432"         type="radio"        class="field radio"         value="Other"       tabindex="126"              onchange="handleInput(this);"       onmouseup="handleInput(this);"                              onmouseup="document.getElementById('Field432_other').focus();"                                  />
+                        <label class="choice" for="Field432_8"               onmouseup="document.getElementById('Field432_other').focus();">
+                        Other</label>
+                        <input id="Field432_other"      name="Field432_other_Other"         type="text"         class="field text other"        value=""        onclick="document.getElementById('Field432_8').checked = 'checked';"                onkeyup="handleInput(this);"        onchange="handleInput(this);"               tabindex="127" />
+                        </span>
+                     </div>
+                  </fieldset>
+               </li>
+               <li class="buttons ">
+                  <div>
+                     <input type="hidden" name="currentPage" id="currentPage" value="rjsnqZgUpyxxAhwuslashIng0gABfARLztsR8wuslashcG8LwhRKFqM=" />
+                     <input id="saveForm" name="saveForm" class="btTxt submit"
+                        type="submit" value="Submit"
+                        onmousedown="doSubmitEvents();" />
+                  </div>
+               </li>
+               <li class="hide">
+                  <label for="comment">Do Not Fill This Out</label>
+                  <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+                  <input type="hidden" id="idstamp" name="idstamp" value="Gr4hkDOl/qAOljknbVJ1xs35e9Rhpf7my6dYbFBebf8=" />
+                  <input type="hidden" id="stats" name="stats" value="{&quot;errors&quot;:0,&quot;startTime&quot;:0,&quot;endTime&quot;:0,&quot;referer&quot;:&quot;https:\/\/bikecrashes.wufoo.com\/admin\/&quot;}" />
+                  <input type="hidden" id="clickOrEnter" name="clickOrEnter" value="" />
+               </li>
+            </ul>
+         </form>
+      </div>
+      <!--container-->
+      <!-- JavaScript -->
+      <script src="/scripts/public/dynamic.0139.js?language=english"></script>
+      <script>
+         __RULES = {"Field320":[{"RuleId":"2","Type":"Show","Setting":{"FieldName":"324","FieldTypes":{"320":"radio"}},"FormId":"1","MatchType":"any","Conditions":[{"ConditionId":"2","FieldName":"320","Filter":"is","Value":"Another vehicle","ReportId":"1","RuleId":"2"}]}]};
+         __ENTRY = [];
+         __PRICES = null;
+
+      </script>
+      <noscript></noscript>
+   </body>
+</html>
+
+
+
+{% endblock %}
