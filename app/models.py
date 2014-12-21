@@ -68,8 +68,8 @@ class Crash_Incident(db.Model):
     other = db.Column(db.String(50))
 
 
-class RoadQuality(db.Model):
-    __tablename__='RoadQuality'
+class Road_Quality(db.Model):
+    __tablename__='road_quality'
     id = db.Column(Integer, primary_key=True)
     incident_id = db.Column(Integer, ForeignKey('crash_incident.id'))
     muni_tracks = db.Column(db.Boolean)
@@ -81,9 +81,10 @@ class RoadQuality(db.Model):
     flooded = db.Column(db.Boolean)
     other_roadway_issue  = db.Column(db.String(50))
 
-class VehicleViolation(db.Model):
-    __tablename__='VehicleViolation'
+class Vehicle_Violation(db.Model):
+    __tablename__='vehicle_violation'
     id = db.Column(Integer, primary_key=True)
+    incident_id = db.Column(Integer, ForeignKey('crash_incident.id'))
     stopped = db.Column(db.Boolean)
     driving_straight = db.Column(db.Boolean)
     ran_off_road = db.Column(db.Boolean)
