@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship, scoped_session
-engine = create_engine('sqlite:////tmp/bikes.db', convert_unicode=True)
+engine = create_engine('sqlite:///bikes.db', convert_unicode=True)
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))
@@ -19,35 +19,38 @@ ROLE_ADMIN = 1
 Base = declarative_base()
 Base.query = db_session.query_property()
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    nickname = db.Column(db.String(64), index=True, unique=True)
-    email = db.Column(db.String(120), index=True, unique=True)
+#Add users later. Not necessary for MVP functionality
+# class User(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     nickname = db.Column(db.String(64), index=True, unique=True)
+#     email = db.Column(db.String(120), index=True, unique=True)
 
 
-    def is_authenticated(self):
-        return True
 
-    def is_active(self):
-        return True
+#     def is_authenticated(self):
+#         return True
 
-    def is_anonymous(self):
-        return False
+#     def is_active(self):
+#         return True
 
-    def get_id(self):
-        try:
-            return unicode(self.id)  # python 2
-        except NameError:
-            return str(self.id)  # python 3
+#     def is_anonymous(self):
+#         return False
 
-    def __repr__(self):
-        return '<User %r>' % (self.nickname)
+#     def get_id(self):
+#         try:
+#             return unicode(self.id)  # python 2
+#         except NameError:
+#             return str(self.id)  # python 3
+
+#     def __repr__(self):
+#         return '<User %r>' % (self.nickname)
 
 
 
 class Crash_Incident(db.Model):
     __tablename__='crash_incident'
     id = db.Column(db.Integer, primary_key = True)
+    cyclist_name = db.Column(db.String(15))
     injury_severity = db.Column(db.String(50))
     type_of_bike = db.Column(db.String(50))
     name_of_street = db.Column(db.String(50))
@@ -67,6 +70,8 @@ class Crash_Incident(db.Model):
     another_vehicle = db.Column(db.Boolean)
     other = db.Column(db.String(50))
 
+    def __repr__(self):
+        return self.cyclist_name
 
 class Road_Quality(db.Model):
     __tablename__='road_quality'
@@ -80,6 +85,9 @@ class Road_Quality(db.Model):
     reduced_roadway_width = db.Column(db.Boolean)
     flooded = db.Column(db.Boolean)
     other_roadway_issue  = db.Column(db.String(50))
+
+    def __repr__(self):
+        return self.incident_id
 
 class Vehicle_Violation(db.Model):
     __tablename__='vehicle_violation'
@@ -97,6 +105,8 @@ class Vehicle_Violation(db.Model):
     entering_traffic = db.Column(db.Boolean)
     parking = db.Column(db.Boolean)
 
+    def __repr__(self):
+        return self.incident_id
 
 
 def main():
