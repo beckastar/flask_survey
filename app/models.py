@@ -45,8 +45,8 @@ class User(db.Model):
 
 
 
-class GenBikeQuestions(db.Model):
-    __tablename__='GenBikeQuestions'
+class Crash_Incident(db.Model):
+    __tablename__='crash_incident'
     id = db.Column(db.Integer, primary_key = True)
     injury_severity = db.Column(db.String(50))
     type_of_bike = db.Column(db.String(50))
@@ -70,6 +70,8 @@ class GenBikeQuestions(db.Model):
 
 class RoadQuality(db.Model):
     __tablename__='RoadQuality'
+    id = db.Column(Integer, primary_key=True)
+    incident_id = db.Column(Integer, ForeignKey('crash_incident.id'))
     muni_tracks = db.Column(db.Boolean)
     potholes = db.Column(db.Boolean)
     loose_materials_on_roadway = db.Column(db.Boolean)
@@ -81,6 +83,7 @@ class RoadQuality(db.Model):
 
 class VehicleViolation(db.Model):
     __tablename__='VehicleViolation'
+    id = db.Column(Integer, primary_key=True)
     stopped = db.Column(db.Boolean)
     driving_straight = db.Column(db.Boolean)
     ran_off_road = db.Column(db.Boolean)
