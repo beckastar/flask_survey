@@ -1,5 +1,13 @@
 
 from app import db
+from sqlalchemy import create_engine
+from sqlalchemy import Column, Integer, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, relationship, scoped_session
+engine = create_engine('sqlite:////tmp/bikes.db', convert_unicode=True)
+db_session = scoped_session(sessionmaker(autocommit=False,
+                                         autoflush=False,
+                                         bind=engine))
 
 ROLE_USER = 0
 ROLE_ADMIN = 1
@@ -8,6 +16,8 @@ ROLE_ADMIN = 1
 # def load_user(id):
 #     return User.query.get(int(id))
 
+Base = declarative_base()
+Base.query = db_session.query_property()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -35,8 +45,8 @@ class User(db.Model):
 
 
 
-class DateQuestions(db.Model):
-    # __tablename__='survey1'
+class GenBikeQuestions(db.Model):
+    __tablename__='GenBikeQuestions'
     id = db.Column(db.Integer, primary_key = True)
     injury_severity = db.Column(db.String(50))
     type_of_bike = db.Column(db.String(50))
@@ -58,13 +68,8 @@ class DateQuestions(db.Model):
     other = db.Column(db.String(50))
 
 
-
-   def __init__(self, arg):
-        super(ClassName, self).__init__()
-        self.arg = arg
-
-
 class RoadQuality(db.Model):
+    __tablename__='RoadQuality'
     muni_tracks = db.Column(db.Boolean)
     potholes = db.Column(db.Boolean)
     loose_materials_on_roadway = db.Column(db.Boolean)
@@ -74,35 +79,25 @@ class RoadQuality(db.Model):
     flooded = db.Column(db.Boolean)
     other_roadway_issue  = db.Column(db.String(50))
 
-class ClassName(object):
-    """docstring for ClassName"""
+class VehicleViolation(db.Model):
+    __tablename__='VehicleViolation'
+    stopped = db.Column(db.Boolean)
+    driving_straight = db.Column(db.Boolean)
+    ran_off_road = db.Column(db.Boolean)
+    turning_right = db.Column(db.Boolean)
+    turning_left = db.Column(db.Boolean)
+    u_turn = db.Column(db.Boolean)
+    backing_up = db.Column(db.Boolean)
+    changing_lanes = db.Column(db.Boolean)
+    slowing_down = db.Column(db.Boolean)
+    entering_traffic = db.Column(db.Boolean)
+    parking = db.Column(db.Boolean)
 
 
 
+def main():
+    Base.metadata.create_all(ENGINE)
 
 
-    #user = db.relationship('User', backref=db.backref('survey1', lazy='dynamic'))
-
-    def __init__(self, gender=None,age=None):
-        self.userid = userid
-
-    def get_id(self):
-        return unicode(self.id)
-
-
-class Survey2(db.Model):
-    # __tablename__='survey2'
-    id = db.Column(db.Integer, primary_key = True)
-    userid = db.Column(db.String(255))
-    def __init__(self, major=None, department=None, count=None, unique=None, userid=None):
-        self.major=major
-        # self.department=department
-        self.count=count
-        self.unique=unique
-        self.userid=userid
-
-    def get_id(self):
-        return unicode(self.id)
-
-    def get_id(self):
-        return unicode(self.id)
+if __name__ == "__main__":
+    main()
