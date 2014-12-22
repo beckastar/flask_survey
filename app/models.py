@@ -45,30 +45,55 @@ Base.query = db_session.query_property()
 #     def __repr__(self):
 #         return '<User %r>' % (self.nickname)
 
+class User(db.Model):
+    __tablename__="user"
+    cyclist_name = db.Column(db.String(15))
+    cyclist_email = db.Column(db.String(25))
+    cyclist_age= db.Column(db.Integer)
+
+
 
 
 class Crash_Incident(db.Model):
     __tablename__='crash_incident'
     id = db.Column(db.Integer, primary_key = True)
-    cyclist_name = db.Column(db.String(15))
     injury_severity = db.Column(db.String(50))
     type_of_bike = db.Column(db.String(50))
     name_of_street = db.Column(db.String(50))
     building_address = db.Column(db.Integer)
     cross_street =db.Column(db.String(50))
-    year_of_crash = db.Column(db.Integer)
+    year_of_crash = db.Column(db.Integer, default = 2015)
     month_of_crash =db.Column(db.Integer)
     day_of_week = db.Column(db.String(10))
     approx_time = db.Column(db.Integer)
-    address = db.Column(db.String(20))
-    rider = db.Column(db.Boolean)
-    holiday = db.Column(db.Boolean)
-    road_conditions = db.Column(db.Boolean)
-    vehicle_violations = db.Column(db.Boolean)
-    lighting_conditions = db.Column(db.Boolean)
-    road_surface = db.Column(db.Boolean)
-    another_vehicle = db.Column(db.Boolean)
+    rider = db.Column(db.Boolean, default=True)
+    holiday = db.Column(db.Boolean, default = False)
+    road_conditions = db.Column(db.Boolean, default= False)
+    vehicle_violations = db.Column(db.Boolean, default = False)
+    lighting_conditions = db.Column(db.Boolean, default= False)
+    road_surface = db.Column(db.Boolean, default=False)
+    another_vehicle = db.Column(db.Boolean, default=True)
     other = db.Column(db.String(50))
+
+    def __init__(self, cyclist_name, injury_severity, type_of_bike, name_of_street, building_address, cross_street, year_of_crash, month_of_crash, day_of_week, approx_time, rider, holiday, road_conditions, vehicle_violations, lighting_conditions, road_surface, another_vehicle, other)
+        self.cyclist_name = cyclist_name
+        self.injury_severity = injury_severity
+        self.type_of_bike = type_of_bike
+        self.name_of_street = name_of_street
+        self.building_address = building_address
+        self.cross_street = cross_street
+        self.year_of_crash = year_of_crash
+        self.month_of_crash = month_of_crash
+        self.day_of_week = day_of_week
+        self.approx_time = approx_time
+        self.rider = rider
+        self.holiday = holiday
+        self.road_conditions = road_conditions
+        self.vehicle_violations = vehicle_violations
+        self.lighting_conditions = lighting_conditions
+        self.road_surface = road_surface
+        self.another_vehicle = another_vehicle
+        self.other = other
 
     def __repr__(self):
         return self.cyclist_name
@@ -88,6 +113,17 @@ class Road_Quality(db.Model):
 
     def __repr__(self):
         return self.incident_id
+
+class Other_Vehicle(db.Model):
+    __tablename__='other_vehicle'
+    id = db.Column(Integer, primary_key=True)
+    incident_id = db.Column(Integer, ForeignKey('crash_incident.id'))
+    bike =db.Column(db.Boolean, default = False)
+    car = db.Column(db.Boolean, default = False)
+    motorcycle = db.Column(db.Boolean, default = False)
+    bus = db.Column(db.Boolean, default = False)
+    muni = db.Column(db.Boolean, default = False)
+
 
 class Vehicle_Violation(db.Model):
     __tablename__='vehicle_violation'
