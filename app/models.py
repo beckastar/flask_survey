@@ -4,54 +4,51 @@ from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship, scoped_session
+
+
 engine = create_engine('sqlite:///bikes.db', convert_unicode=True)
-db_session = scoped_session(sessionmaker(autocommit=False,
+
+session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))
 
 ROLE_USER = 0
 ROLE_ADMIN = 1
 
-# @lm.user_loader
-# def load_user(id):
-#     return User.query.get(int(id))
-
 Base = declarative_base()
-Base.query = db_session.query_property()
-
-#Add users later. Not necessary for MVP functionality
-# class User(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     nickname = db.Column(db.String(64), index=True, unique=True)
-#     email = db.Column(db.String(120), index=True, unique=True)
-
-
-
-#     def is_authenticated(self):
-#         return True
-
-#     def is_active(self):
-#         return True
-
-#     def is_anonymous(self):
-#         return False
-
-#     def get_id(self):
-#         try:
-#             return unicode(self.id)  # python 2
-#         except NameError:
-#             return str(self.id)  # python 3
-
-#     def __repr__(self):
-#         return '<User %r>' % (self.nickname)
+Base.query = session.query_property()
 
 class User(db.Model):
     __tablename__="user"
+    id = db.Column(db.Integer, primary_key = True)
     cyclist_name = db.Column(db.String(15))
     cyclist_email = db.Column(db.String(25))
     cyclist_age= db.Column(db.Integer)
+    date_created = db.Column(db.String(64), nullable=False)
 
+    # Return true unless user not allowed to authenticate
+    def is_authenticated(self):
+        return True
 
+    # Returns False for a banned user
+    def is_active(self):
+        return True
+
+    # Return true for fake users not supposed to login
+    def is_anonymous(self):
+        return False
+
+    # Generate unique id for user
+    def get_id(self):
+        return unicode(self.id)
+
+    #Salt password
+    @staticmethod
+    def set_password(password):
+        return generate_password_hash(password)
+
+    def check_password(self, submitted_pwd):
+        return check_password_hash(self.password, submitted_pwd)
 
 
 class Crash_Incident(db.Model):
@@ -74,26 +71,6 @@ class Crash_Incident(db.Model):
     road_surface = db.Column(db.Boolean, default=False)
     another_vehicle = db.Column(db.Boolean, default=True)
     other = db.Column(db.String(50))
-
-    def __init__(self, cyclist_name, injury_severity, type_of_bike, name_of_street, building_address, cross_street, year_of_crash, month_of_crash, day_of_week, approx_time, rider, holiday, road_conditions, vehicle_violations, lighting_conditions, road_surface, another_vehicle, other)
-        self.cyclist_name = cyclist_name
-        self.injury_severity = injury_severity
-        self.type_of_bike = type_of_bike
-        self.name_of_street = name_of_street
-        self.building_address = building_address
-        self.cross_street = cross_street
-        self.year_of_crash = year_of_crash
-        self.month_of_crash = month_of_crash
-        self.day_of_week = day_of_week
-        self.approx_time = approx_time
-        self.rider = rider
-        self.holiday = holiday
-        self.road_conditions = road_conditions
-        self.vehicle_violations = vehicle_violations
-        self.lighting_conditions = lighting_conditions
-        self.road_surface = road_surface
-        self.another_vehicle = another_vehicle
-        self.other = other
 
     def __repr__(self):
         return self.cyclist_name

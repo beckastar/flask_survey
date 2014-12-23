@@ -1,24 +1,39 @@
-from flask import render_template, flash, redirect, session, url_for, request, g
-from flask.ext.login import login_user, logout_user, current_user, \
-    login_required
-from app import app, db, lm, oid
-from .forms import LoginForm
-from .models import User
+from flask import Flask, render_template, session
+from app.models import session as db_session
+from app import app, db
+from .models import User, Crash_Incident
+
+# from flask.ext.bootstrap3 import Bootstrap
+# from flask.ext.login import LoginManager, login_required, logout_user, login_user, current_user
+
+app = Flask(__name__)
 
 
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
+@app.route('/')
 @app.route('/index')
-def show_homepage():
-    return render_template('index.html')
+def index():
+    return "Hello, World!"
 
-@app.route('/faq')
-def show_faq():
-    return render_template('faq.html')
+# @app.route('/faq')
+# def show_faq():
+#     return render_template('faq.html')
 
-@app.route('/survey', methods=['POST'])
+@app.route('/user_survey', methods=['POST'])
 def show_survey():
-    form = survey_form
-    if form.validate_on_submit():
-        new_incident = Crash_Incident(crash_incident = form.)
-        db.session.add()
-        db.session.commit()
+    cyclist_name = request.form["cyclist_name"]
+    cyclist_email = request.form["cyclist_email"]
+    cyclist_age = request.form["cyclist_age"]
+    user = models.User(cyclist_name = cyclist_name, cyclist_email=cyclist_email, cyclist_age=cyclist_age)
+    models.session.add(user)
+    db.session.add(user)
+    db.session.commit()
     return render_template('survey.html')
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
