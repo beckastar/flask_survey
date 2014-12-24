@@ -1,6 +1,8 @@
 from flask import Flask, render_template, session, flash, redirect, url_for, request, g
-from app.models import session as db_session
+# from app.models import session as db_session
 from app import app, db, lm, oid
+from .forms import LoginForm
+from wtforms.validators import DataRequired
 from .models import User, Crash_Incident
 from flask.ext.login import login_user, logout_user, current_user, login_required
 
