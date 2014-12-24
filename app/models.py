@@ -25,6 +25,26 @@ class User(db.Model):
     cyclist_age= db.Column(db.Integer)
     date_created = db.Column(db.String(64), nullable=False)
 
+
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        return True
+
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        try:
+            return unicode(self.id)  # python 2
+        except NameError:
+            return str(self.id)  # python 3
+
+    def __repr__(self):
+        return '<User %r>' % (self.nickname)
+
+
 class Crash_Incident(db.Model):
     __tablename__='crash_incident'
     id = db.Column(db.Integer, primary_key = True)
