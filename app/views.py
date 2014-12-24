@@ -16,12 +16,12 @@ def before_request():
     g.user = current_user
 
 
-@app.route('/index_login')
+@app.route('/index')
 @login_required
 def index_login():
     user = g.user
-    return render_template('index_login.html',
-                           title='Home_login',
+    return render_template('index.html',
+                           title='Home',
                            user=user)
 
 
@@ -64,10 +64,10 @@ def after_login(resp):
 def not_found_error(error):
     return render_template('404.html'), 404
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return render_template('index.html')
+# @app.route('/')
+# @app.route('/index')
+# def index():
+#     return render_template('index.html')
 
 @app.route('/faq')
 def show_faq():
